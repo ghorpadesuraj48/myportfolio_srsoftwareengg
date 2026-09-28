@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suraj V Ghorpade — Senior Full-Stack Engineer</title>
+<meta name="description" content="Suraj V Ghorpade — Senior Full-Stack Engineer specialising in Angular, .NET Core, Blazor, and AI-powered solutions. Creator of NuGetGuard. Open to global remote roles." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== CURSOR GLOW ===== -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ===== CANVAS PARTICLES ===== -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- ===== NAV ===== -->
+<header class="site-header" id="top">
+  <nav class="nav-container">
+    <a class="logo" href="#top">
+      <span class="logo-text">S</span>
+      <span class="logo-full">SURAJ<span class="logo-dot">.</span>DEV</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link" data-nav>About</a>
+      <a href="#projects" class="nav-link" data-nav>Projects</a>
+      <a href="#experience" class="nav-link" data-nav>Experience</a>
+      <a href="#skills" class="nav-link" data-nav>Skills</a>
+      <a href="#accomplishments" class="nav-link" data-nav>Awards</a>
+      <a href="#contact" class="nav-link" data-nav>Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle theme">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge anim-fade">
+        <span class="badge-dot"></span>
+        Open to Global Remote Roles
+      </div>
+      <h1 class="hero-name">
+        <span class="line anim-line">Suraj V</span>
+        <span class="line anim-line">Ghorpade</span>
+      </h1>
+      <p class="hero-tagline anim-fade">
+        Senior Full-Stack Engineer crafting <span class="text-gradient">healthcare-grade</span> web applications
+        with <span class="text-gradient">Angular</span>, <span class="text-gradient">C# .NET Core</span> &amp; <span class="text-gradient">Blazor</span>.
+      </p>
+
+      <div class="hero-stats anim-fade">
+        <div class="stat-item">
+          <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Deployments</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Success Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number ordinal">2nd</span>
+          <span class="stat-label">AI Hackathon</span>
+        </div>
+      </div>
+
+      <div class="hero-cta anim-fade">
+        <a href="#contact" class="btn-primary">
+          <span>Get In Touch</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#projects" class="btn-ghost">View Projects</a>
+      </div>
+    </div>
+
+    <div class="hero-visual anim-fade">
+      <div class="avatar-container">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-glow"></div>
+        <img src="assets/img/avatar-main.png" alt="Suraj V Ghorpade — cartoon avatar" class="avatar-img" />
+      </div>
+      <div class="floating-cards">
+        <div class="float-card fc-1">
+          <span class="fc-icon">&#x2699;</span> .NET Core
+        </div>
+        <div class="float-card fc-2">
+          <span class="fc-icon">&#x26A1;</span> Angular
+        </div>
+        <div class="float-card fc-3">
+          <span class="fc-icon">&#x1F9E0;</span> AI / ML
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator anim-fade">
+    <span>Scroll to explore</span>
+    <div class="scroll-line"><div class="scroll-dot"></div></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title split-text">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lead anim-slide">
+          Results-driven Senior Software Engineer with <strong>4+ years</strong> of full-stack development
+          experience in <strong>healthcare technology</strong>, specialising in Angular (12&ndash;20), C# .NET Core,
+          .NET MVC, and Blazor.
+        </p>
+        <p class="about-body anim-slide">
+          Promoted within 3 years for consistently delivering high-quality solutions. Led a team of 3+ engineers,
+          managed 20+ production deployments with a 100% success rate, and contributed to 2 successful web-app migrations.
+          Creator of <strong>NuGetGuard</strong>, an open-source .NET security tool published on nuget.org.
+        </p>
+        <p class="about-body anim-slide">
+          Recognised for AI-powered solution development (2nd place, organisation-wide hackathon with ClarityClaim)
+          and precision AI prompting that measurably accelerates delivery cycles. Seeking a globally distributed,
+          remote-first senior engineering role.
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="glass-card anim-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Remote Ready</h3>
+          <ul>
+            <li>Async collaboration across time zones</li>
+            <li>Cross-timezone client communication</li>
+            <li>Self-managed delivery ownership</li>
+            <li>Direct client requirement gathering</li>
+          </ul>
+        </div>
+        <div class="glass-card anim-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Open Source</h3>
+          <ul>
+            <li>NuGetGuard on nuget.org</li>
+            <li>Typosquat + vulnerability detection</li>
+            <li>MIT licensed, free for all</li>
+            <li>MSBuild + CI/CD integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title split-text">Featured Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- NuGetGuard -->
+      <div class="project-card anim-project" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-header">
+          <div class="project-icon nugetguard-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="project-links">
+            <a href="https://www.nuget.org/packages/NuGetGuard.Cli" target="_blank" rel="noopener" class="project-link-icon" title="View on NuGet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">NuGetGuard</h3>
+        <p class="project-desc">
+          Open-source .NET security tool published on <strong>nuget.org</strong>. Protects .NET projects from
+          supply-chain attacks with typosquat detection, vulnerability scanning via OSV.dev,
+          license-change tracking, and outdated version checks. Runs at build time via MSBuild
+          and in CI/CD with SARIF output for PR annotations.
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">C# .NET</span>
+          <span class="p-tag">NuGet</span>
+          <span class="p-tag">OSV.dev</span>
+          <span class="p-tag">MSBuild</span>
+          <span class="p-tag">SARIF</span>
+          <span class="p-tag">MIT License</span>
+        </div>
+        <div class="project-stats-row">
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Typosquat Detection
+          </div>
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Vulnerability Scan
+          </div>
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            License Tracking
+          </div>
+        </div>
+      </div>
+
+      <!-- ClarityClaim -->
+      <div class="project-card anim-project" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-header">
+          <div class="project-icon clarityclaim-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="project-badge">Hackathon 2026</span>
+        </div>
+        <h3 class="project-title">ClarityClaim</h3>
+        <p class="project-desc">
+          AI-powered clinical documentation and medical necessity validation platform built for
+          HealthAsyst's 2026 hackathon. Features real-time audio transcription (Whisper.net),
+          SOAP note generation via multi-LLM pipeline (Qwen + Gemma), NCD/LCD policy validation
+          with RAG, and FHIR-integrated patient context. Fully local-first, zero cloud dependency.
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">.NET 10</span>
+          <span class="p-tag">React</span>
+          <span class="p-tag">Whisper.net</span>
+          <span class="p-tag">Semantic Kernel</span>
+          <span class="p-tag">FHIR</span>
+          <span class="p-tag">Multi-LLM</span>
+        </div>
+        <div class="project-stats-row">
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+            Voice-to-SOAP
+          </div>
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Policy Validation
+          </div>
+          <div class="ps-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            FHIR Integration
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title split-text">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-track"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <div class="timeline-item anim-timeline">
+        <div class="timeline-dot">
+          <div class="dot-ping"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="tc-header">
+            <div>
+              <h3>Senior Software Engineer</h3>
+              <p class="tc-org">HealthAsyst Pvt Ltd &middot; Bengaluru, India</p>
+            </div>
+            <span class="tc-date">Oct 2025 &ndash; Present</span>
+          </div>
+          <span class="tc-badge">Promoted</span>
+          <ul class="tc-list">
+            <li><strong>Team Leadership</strong> &mdash; Lead a team of 3 engineers; primary client contact for requirements gathering and sprint planning.</li>
+            <li><strong>Code Review &amp; Quality</strong> &mdash; 100% PR review coverage; resolved 15+ critical defects pre-release, cutting post-deployment bugs by <span class="metric">~30%</span>.</li>
+            <li><strong>Angular 20 Modernisation</strong> &mdash; Led adoption of Signals and new control-flow APIs, reducing boilerplate by <span class="metric">~25%</span>.</li>
+            <li><strong>AI-Driven Productivity</strong> &mdash; Precision AI prompting cuts task research time by <span class="metric">40%</span>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item anim-timeline">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="tc-header">
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="tc-org">HealthAsyst Pvt Ltd &middot; Bengaluru, India</p>
+            </div>
+            <span class="tc-date">Aug 2022 &ndash; Sep 2025</span>
+          </div>
+          <ul class="tc-list">
+            <li><strong>Full-Stack Development</strong> &mdash; Healthcare web apps with Angular, C# .NET Core, .NET MVC, Blazor, SQL Server across 3+ agile product teams.</li>
+            <li><strong>AI Hackathon &mdash; 2nd Place (2024)</strong> &mdash; Led 4-member team to build AI healthcare solution in 48 hours, placing 2nd of 10+ teams org-wide.</li>
+            <li><strong>Deployment Excellence</strong> &mdash; 20+ Sandbox &amp; Production deployments with <span class="metric">100%</span> success rate; received Thank You Award (2024).</li>
+            <li><strong>App Migration</strong> &mdash; Led migration &amp; redeployment of 2 legacy web apps on schedule, zero post-migration critical defects.</li>
+            <li><strong>Finance Module</strong> &mdash; End-to-end billing module reducing manual effort by <span class="metric">60%</span> for 20+ clients.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title split-text">Tech Stack</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group anim-skill">
+        <div class="sg-header">
+          <div class="sg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Frontend</h3>
+        </div>
+        <div class="skill-pills">
+          <span class="pill">Angular 12&ndash;20</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">JavaScript ES6+</span>
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill">Bootstrap</span>
+          <span class="pill">Blazor</span>
+          <span class="pill">Telerik UI</span>
+          <span class="pill">React</span>
+          <span class="pill">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group anim-skill">
+        <div class="sg-header">
+          <div class="sg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Backend</h3>
+        </div>
+        <div class="skill-pills">
+          <span class="pill">C# .NET Core</span>
+          <span class="pill">.NET MVC</span>
+          <span class="pill">.NET 10</span>
+          <span class="pill">RESTful APIs</span>
+          <span class="pill">SQL Server</span>
+          <span class="pill">Semantic Kernel</span>
+        </div>
+      </div>
+
+      <div class="skill-group anim-skill">
+        <div class="sg-header">
+          <div class="sg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>Tools &amp; DevOps</h3>
+        </div>
+        <div class="skill-pills">
+          <span class="pill">Git</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">CI/CD Pipelines</span>
+          <span class="pill">App Deployment</span>
+          <span class="pill">NuGet Packaging</span>
+          <span class="pill">FHIR</span>
+        </div>
+      </div>
+
+      <div class="skill-group anim-skill">
+        <div class="sg-header">
+          <div class="sg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Practices</h3>
+        </div>
+        <div class="skill-pills">
+          <span class="pill">Agile / Scrum</span>
+          <span class="pill">Code Review</span>
+          <span class="pill">UI/UX Development</span>
+          <span class="pill">Technical Mentorship</span>
+          <span class="pill">Client Requirements</span>
+        </div>
+      </div>
+
+      <div class="skill-group anim-skill">
+        <div class="sg-header">
+          <div class="sg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>AI &amp; Productivity</h3>
+        </div>
+        <div class="skill-pills">
+          <span class="pill">Advanced AI Prompting</span>
+          <span class="pill">Token-efficient Workflows</span>
+          <span class="pill">Azure AI Fundamentals (AI-900)</span>
+          <span class="pill">Multi-LLM Pipelines</span>
+          <span class="pill">RAG / Vector Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACCOMPLISHMENTS ===== -->
+<section id="accomplishments" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title split-text">Accomplishments</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="accom-grid">
+      <div class="accom-col">
+        <div class="award-card anim-award">
+          <span class="award-num">01</span>
+          <div>
+            <h3>2nd Place &mdash; AI Hackathon</h3>
+            <p>Organisation-wide, 10+ teams &middot; HealthAsyst &middot; 2024</p>
+          </div>
+        </div>
+        <div class="award-card anim-award">
+          <span class="award-num">02</span>
+          <div>
+            <h3>Thank You Award</h3>
+            <p>20+ zero-defect production deployments &middot; HealthAsyst &middot; 2024</p>
+          </div>
+        </div>
+        <div class="award-card anim-award">
+          <span class="award-num">03</span>
+          <div>
+            <h3>Gold Medal &mdash; 8.95 CGPA</h3>
+            <p>Top of cohort &middot; KS Institute of Engineering &middot; 2022</p>
+          </div>
+        </div>
+        <div class="award-card anim-award">
+          <span class="award-num">04</span>
+          <div>
+            <h3>NuGetGuard &mdash; Published on nuget.org</h3>
+            <p>Open-source .NET security tool &middot; MIT Licensed &middot; 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accom-col">
+        <div class="glass-card cert-card anim-card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Microsoft Azure AI Fundamentals &mdash; AI-900 (2026)</li>
+            <li>Gold Certification in UX Design Foundations (2024)</li>
+            <li>HackerRank SQL Intermediate Certification (2022)</li>
+          </ul>
+        </div>
+        <div class="glass-card edu-card anim-card">
+          <h3>Education</h3>
+          <p class="edu-degree">Bachelor of Engineering &mdash; Electronics &amp; Communications Engineering</p>
+          <p class="edu-meta">KS Institute of Engineering and Management, Bengaluru &middot; CGPA: 8.95/10 &middot; Gold Medalist &middot; Aug 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title split-text">Get In Touch</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="contact-lead anim-slide">
+          Based in Bengaluru, India. Open to globally distributed, remote-first roles.
+          Reach out however works best for you.
+        </p>
+
+        <div class="contact-links">
+          <button type="button" id="whatsappBtn" class="contact-btn anim-slide">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .612.616l4.584-1.453A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.663-6.304-1.803l-.44-.264-2.892.917.96-2.819-.29-.461A9.967 9.967 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            </div>
+            <span>WhatsApp</span>
+            <span class="cb-arrow">&rarr;</span>
+          </button>
+          <a href="https://www.linkedin.com/in/suraj-v-ghorpade-753098190" target="_blank" rel="noopener" class="contact-btn anim-slide">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <span>LinkedIn</span>
+            <span class="cb-arrow">&rarr;</span>
+          </a>
+          <button type="button" id="instagramBtn" class="contact-btn anim-slide">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <span>Instagram</span>
+            <span class="cb-arrow">&rarr;</span>
+          </button>
+          <a href="mailto:surajgworks@gmail.com" class="contact-btn anim-slide">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <span>Email</span>
+            <span class="cb-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap anim-slide">
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <input type="text" id="cf-name" name="from_name" required placeholder=" " />
+            <label for="cf-name">Your Name</label>
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="cf-email" name="email_address" required placeholder=" " />
+            <label for="cf-email">Email Address</label>
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <textarea id="cf-message" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="cf-message">Message</label>
+            <div class="form-line"></div>
+          </div>
+          <button type="submit" class="btn-primary btn-submit" id="cf-submit">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p id="cf-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo footer-logo">
+      <span class="logo-full">HELPDEV<span class="logo-dot">.</span>NET</span>
+    </a>
+    <span class="footer-copy">&copy; <span id="year"></span> Suraj V Ghorpade. Crafted with precision.</span>
+  </div>
+</footer>
+
+<!-- ===== VISIT NOTICE ===== -->
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Visit notice">
+  <p>This site logs anonymous visit analytics (page, referrer, device, approximate location) to help the owner understand traffic. No personal data is ever accessed.</p>
+  <button id="cookieAccept" class="btn-primary btn-sm">Got it</button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
